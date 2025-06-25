@@ -19,8 +19,8 @@ function calcRemaining(){
         winterDay = 18;
         summerDay = 19;
     }
-    winterVacation = new Date(`${actualYear} 07 ${winterDay} 23:59`);
-    summerVacation = new Date(`${actualYear} 12 ${summerDay} 23:59`);
+    winterVacation = new Date(`${actualYear}-07-${winterDay} 23:59:59`);
+    summerVacation = new Date(`${actualYear}-12-${summerDay} 23:59:59`);
 
     winterRemaining = winterVacation - actualDatetime;
     summerRemaining = summerVacation - actualDatetime;
@@ -29,8 +29,8 @@ function calcRemaining(){
     summerFormatedRemaining = formatMili(summerRemaining); // array
     winter = winterFormatedRemaining;
     summer = summerFormatedRemaining;
-    winterH1.textContent(`Faltan ${winter[0]} días, ${winter[1]} horas, ${winter[2]} minutos y ${winter[3]} segundos.`);
-    summerH1.textContent(`Faltan ${summer[0]} días, ${summer[1]} horas, ${summer[2]} minutos y ${summer[3]} segundos.`)
+    winterH1.textContent = (`Faltan ${winter[0]} días, ${winter[1]} horas, ${winter[2]} minutos y ${winter[3]} segundos.`);
+    summerH1.textContent = (`Faltan ${summer[0]} días, ${summer[1]} horas, ${summer[2]} minutos y ${summer[3]} segundos.`);
 }
 
-setInterval(calcRemaining(), 1000)
+setInterval(calcRemaining, 1000);
